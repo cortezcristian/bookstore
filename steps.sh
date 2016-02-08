@@ -23,6 +23,8 @@ function refactorModuleName {
     find $main/js $main/*.html -type f -exec sed -i 's/starter/BookStoreApp/g' "{}" +;
 }
 
+# touch $main/templates/purchases.html $main/templates/cart.html $main/templates/book.html
+
 # X. Detect Case 
 # ======================================
 echo "Resolving... $1"
