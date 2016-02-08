@@ -24,7 +24,7 @@ angular.module('BookStoreApp', ['ionic', 'BookStoreApp.controllers', 'BookStoreA
       .state('app', {
         url: "/app",
         abstract: true,
-        templateurl: "templates/menu.html",
+        templateUrl: "templates/menu.html",
         controller: 'AppCtrl'
       })
       .state('app.browse', {
