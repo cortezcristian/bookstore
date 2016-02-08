@@ -13,8 +13,14 @@ function startproject {
 
 # 2. Refactoring the template 
 # ======================================
-function refactortemplate {
+function refactorTemplate {
     cp $main/templates/menu.html ./tpls/menu.html 
+}
+
+# 3. Refactoring the module name 
+# ======================================
+function refactorModuleName {
+    find $main/js $main/*.html -type f -exec sed -i 's/starter/BookStoreApp/g' "{}" +;
 }
 
 # X. Detect Case 
@@ -25,7 +31,10 @@ case $1 in
     startproject 
     ;;
   step2)
-    refactortemplate "$2" ${@:3}
+    refactorTemplate "$2" ${@:3}
+    ;;
+  step3)
+    refactorModuleName "$2" ${@:3}
     ;;
   *)
     echo $"Usage: $0 {step1|step2|help}"
